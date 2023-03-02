@@ -13,6 +13,10 @@ export const BookingForm = () => {
     <form
       className="mx-auto max-w-2xl rounded-2xl border-2 my-4 flex p-2 flex-col"
       onSubmit={() => {
+        // Unit tests
+        //    |
+        //    |
+        //    V
         if (typeof fullName !== "string" || fullName.length < 3) {
           alert("Please enter a valid name");
           return;
