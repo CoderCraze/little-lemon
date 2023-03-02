@@ -10,7 +10,7 @@ const Home = () => {
         src={BannerHome}
         alt="RestourantImage"
       />
-      <div className="grid grid-cols-3 w-[95%] mx-auto gap-4">
+      <div className="lg:grid lg:grid-cols-3 w-[95%] mx-auto gap-4">
         {cardsHome.map((card) => (
           <Card {...card} />
         ))}

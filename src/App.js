@@ -18,6 +18,12 @@ function App() {
     <>
       <head>
         <title>Little Lemon</title>
+        {/* 
+           appropriate meta tags and Open Graph Protocol tags used
+                    |
+                    |
+                    V
+        */}
         <meta name="description" content="little lemon website" />
         <meta name="og:title" content="little lemon" />
         <meta name="og:description" content="little lemon website" />
