@@ -1,12 +1,15 @@
 import { useState } from "react";
 
 export const BookingForm = () => {
-  const [date, setDate] = useState(new Date());
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [time, setTime] = useState("");
   const [tableSize, setTableSize] = useState(0);
-
+  // Managing state of available times
+  //    |
+  //    |
+  //    V
+  const [date, setDate] = useState(new Date());
+  const [time, setTime] = useState("");
   const bookedTimes = ["12:00", "12:30", "13:00", "13:30"];
 
   return (
