@@ -1,5 +1,5 @@
 import DatePicker from "react-date-picker";
-import { BookingForm } from "../components/BookingForm";
+import BookingForm from "../components/BookingForm";
 
 const Booking = () => {
   return (

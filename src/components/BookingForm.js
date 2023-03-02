@@ -10,7 +10,7 @@ const BookingForm = (props) => {
   //    V
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState("");
-  const bookedTimes = ["12:00", "12:30", "13:00", "13:30"];
+  const availableTimes = ["12:00", "12:30", "13:00", "13:30"];
 
   return (
     <form
@@ -32,17 +32,15 @@ const BookingForm = (props) => {
       <label htmlFor="Please select a time" className="text-center label">
         Please select a time
       </label>
-      <input
-        className="input input-primary"
+      <select
+        className="select select-primary"
         value={time}
         onChange={(e) => setTime(e.target.value)}
-        // Client side validation
-        //    |
-        //    |
-        //    V
-        required
-        type="time"
-      />
+      >
+        {availableTimes.map((time) => (
+          <option key={time}>{time}</option>
+        ))}
+      </select>
       <label className="text-center label">Please select a table size</label>
       <input
         type="number"
