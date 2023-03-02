@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const BookingForm = () => {
+const BookingForm = (props) => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [tableSize, setTableSize] = useState(0);
@@ -15,28 +15,8 @@ export const BookingForm = () => {
   return (
     <form
       className="mx-auto max-w-2xl rounded-2xl border-2 my-4 flex p-2 flex-col"
+      {...props}
       onSubmit={() => {
-        // Unit tests
-        //    |
-        //    |
-        //    V
-        if (typeof fullName !== "string" || fullName.length < 3) {
-          alert("Please enter a valid name");
-          return;
-        }
-        if (typeof email !== "string" || email.length < 3) {
-          alert("Please enter a valid email");
-          return;
-        }
-        if (typeof time !== "string" || time.length < 3) {
-          alert("Please enter a valid time");
-          return;
-        }
-
-        if (bookedTimes.includes(time)) {
-          alert("This time is already booked");
-          return;
-        }
         alert(`Booking successfull details send to ${email}`);
       }}
     >
@@ -49,7 +29,9 @@ export const BookingForm = () => {
         required
         onChange={(e) => setDate(e.target.value)}
       />
-      <label className="text-center label">Please select a time</label>
+      <label htmlFor="Please select a time" className="text-center label">
+        Please select a time
+      </label>
       <input
         className="input input-primary"
         value={time}
@@ -104,3 +86,5 @@ export const BookingForm = () => {
     </form>
   );
 };
+
+export default BookingForm;
