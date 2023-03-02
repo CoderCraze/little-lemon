@@ -10,7 +10,6 @@ const BookingForm = (props) => {
   //    V
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState("");
-  const availableTimes = ["12:00", "12:30", "13:00", "13:30"];
 
   return (
     <form
@@ -37,9 +36,10 @@ const BookingForm = (props) => {
         value={time}
         onChange={(e) => setTime(e.target.value)}
       >
-        {availableTimes.map((time) => (
-          <option key={time}>{time}</option>
-        ))}
+        {props.availableTimes &&
+          props.availableTimes.map((time) => (
+            <option key={time}>{time}</option>
+          ))}
       </select>
       <label className="text-center label">Please select a table size</label>
       <input
